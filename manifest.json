@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "링크나무",
+  "description": "Link to LinkNamu",
+  "version": "1.0",
+  "icons": {
+    "16": "./images/16.png",
+    "48": "./images/48.png",
+    "128": "./images/128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "./images/16.png",
+      "48": "./images/48.png",
+      "128": "./images/128.png"
+    },
+    "default_title": "LinkNamu",
+    "default_popup": "./popup/popup.html"
+  },
+  "permissions": ["activeTab", "storage", "tabs"],
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./scripts/inject.js"]
+    }
+  ]
+}
